@@ -80,37 +80,16 @@ class FlyNoWay : FlyBehavior {
 }
 
 // Duck
-abstract class Duck() {
-	...
-    lateinit var flyBehavior: FlyBehavior
-    fun performFly() = flyBehavior.fly()
-}
-
-class MallardDuck() : Duck() {
-    ...
-    init { flyBehavior = FlyWithWings() }
-}
-
-class RedHeadDuck : Duck() {
-	...
- 	init { flyBehavior = FlyNoWay() }
-}
-```
-
-There is another guy passing the behavior in the constructor and with a default value
-
-```js
-// Duck
 abstract class Duck(var flyBehavior: FlyBehavior) {
 	...
     fun performFly() = flyBehavior.fly()
 }
 
-class MallardDuck() : Duck(flyBehavior = FlyWithWings()) {
+class MallardDuck() : Duck(FlyWithWings()) { // Behavior is set as a property 'default value'. Duck(flyBehavior = FlyWithWings()) 
 	...
 }
 
-class RedHeadDuck : Duck(flyBehavior = FlyNoWay()) {
+class RedHeadDuck : Duck(FlyNoWay()) {
 	...
 }
 

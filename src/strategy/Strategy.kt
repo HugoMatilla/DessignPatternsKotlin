@@ -18,7 +18,7 @@ fun main(args: Array<String>) {
 }
 
 fun doThis() {
-
+    test()
     println("-------")
     val m = MallardDuck()
     m.display()
@@ -90,3 +90,11 @@ class RedHeadDuck : Duck(FlyNoWay(), Squeak()) {
     override fun display() = println("Display RedHeadDuck")
 }
 
+fun test() {
+    val mallardDuck = MallardDuck()
+    mallardDuck.display()
+    mallardDuck.swim()
+    mallardDuck.performFly()
+    mallardDuck.flyBehavior = FlyNoWay()
+    mallardDuck.performFly()
+}
