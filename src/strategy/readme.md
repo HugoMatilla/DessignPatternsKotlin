@@ -65,7 +65,7 @@ Separate the behaviors from the Duck super class.
 * Initialize them in the sub class
 * Allow to change the behavior dynamically
 
-```kotlin
+```js
 // FlyBehavior
 interface FlyBehavior {
     fun fly()
@@ -96,7 +96,7 @@ class RedHeadDuck : Duck(FlyNoWay()) {
 
 Test
 
-```kotlin
+```js
 
 fun test() {
     val mallardDuck = MallardDuck()
